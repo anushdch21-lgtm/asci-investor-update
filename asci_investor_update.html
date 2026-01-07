@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCI Investor Update | H2 FY25</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text: #37352F;
+            --text-light: #787774;
+            --text-lighter: #9B9A97;
+            --bg: #FFFFFF;
+            --bg-hover: #F7F6F3;
+            --bg-gray: #F1F1EF;
+            --border: #E9E9E7;
+            --accent: #2EAADC;
+            --green: #4DAB9A;
+            --orange: #D9730D;
+            --red: #E03E3E;
+            --purple: #9065B0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 96px;
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 48px;
+        }
+
+        .header-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 8px;
+        }
+
+        .header-meta {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Callout */
+        .callout {
+            display: flex;
+            gap: 12px;
+            padding: 16px;
+            background: var(--bg-gray);
+            border-radius: 4px;
+            margin: 24px 0;
+        }
+
+        .callout-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .callout-content {
+            font-size: 0.95rem;
+        }
+
+        /* Section */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin: 48px 0 16px;
+            padding-bottom: 4px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 32px 0 12px;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        /* Metrics Row */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            margin: 24px 0;
+            overflow: hidden;
+        }
+
+        .metric {
+            background: var(--bg);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            font-weight: 500;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        tr:hover td {
+            background: var(--bg-hover);
+        }
+
+        /* Toggle sections */
+        .toggle {
+            margin: 8px 0;
+        }
+
+        .toggle-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 6px 0;
+            cursor: default;
+        }
+
+        .toggle-icon {
+            color: var(--text-lighter);
+            font-size: 0.8rem;
+            width: 20px;
+            flex-shrink: 0;
+            padding-top: 3px;
+        }
+
+        .toggle-title {
+            font-weight: 500;
+        }
+
+        .toggle-content {
+            padding-left: 28px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* List */
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-icon {
+            font-size: 1rem;
+            flex-shrink: 0;
+            width: 24px;
+        }
+
+        .list-content {
+            flex: 1;
+        }
+
+        .list-title {
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .list-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        .tag-green {
+            background: #DBEDDB;
+            color: #1E5A3D;
+        }
+
+        .tag-yellow {
+            background: #FDECC8;
+            color: #7B5A2D;
+        }
+
+        .tag-blue {
+            background: #D3E5EF;
+            color: #24527D;
+        }
+
+        /* Inline code / mono */
+        code {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.9em;
+            background: var(--bg-gray);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        /* Product blocks */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .product {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 20px;
+        }
+
+        .product-name {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .product-features {
+            font-size: 0.8rem;
+            color: var(--text);
+        }
+
+        .product-features li {
+            margin-left: 16px;
+            margin-bottom: 4px;
+        }
+
+        /* Partners */
+        .partners {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .partner {
+            padding: 6px 12px;
+            background: var(--bg-gray);
+            border-radius: 3px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--bg-hover);
+            border-radius: 4px;
+        }
+
+        .team-avatar {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .team-info {
+            font-size: 0.9rem;
+        }
+
+        .team-role {
+            font-weight: 500;
+        }
+
+        .team-detail {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Links */
+        a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: var(--border);
+        }
+
+        a:hover {
+            text-decoration-color: var(--text);
+        }
+
+        .link-block {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: var(--bg-hover);
+            border-radius: 4px;
+            text-decoration: none;
+            margin: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .link-block:hover {
+            background: var(--bg-gray);
+        }
+
+        /* Divider */
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 32px 0;
+        }
+
+        /* Two columns */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .page {
+                padding: 40px 24px;
+            }
+
+            .metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-icon">📡</div>
+            <h1>ASCI Investor Update</h1>
+            <p class="header-meta">H2 FY25 · Applied Science Innovations · Climate Intelligence</p>
+        </header>
+
+        <!-- Callout -->
+        <div class="callout">
+            <span class="callout-icon">💡</span>
+            <div class="callout-content">
+                <strong>TL;DR</strong> — Progressed from pilot deployment to early commercial traction in reinsurance. Cracked proof of concept in Oil & Gas. <code>$50K ARR</code> across 4 enterprise clients.
+            </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-value">$50K</div>
+                <div class="metric-label">ARR</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">$870</div>
+                <div class="metric-label">Revenue (H2)</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">+100%</div>
+                <div class="metric-label">Deployments</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">$11K</div>
+                <div class="metric-label">Cash</div>
+            </div>
+        </div>
+
+        <!-- Business Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>H1 FY25</th>
+                    <th>H2 FY25</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Revenue (Recognized)</td>
+                    <td>$0</td>
+                    <td>$870</td>
+                    <td>Howden Reinsurance Brokers</td>
+                </tr>
+                <tr>
+                    <td>Annual Recurring Revenue</td>
+                    <td>$0</td>
+                    <td>$50K</td>
+                    <td>Howden, ICICI Lombard, eKutir, Tata Trusts</td>
+                </tr>
+                <tr>
+                    <td>Cash in Bank</td>
+                    <td>$8K</td>
+                    <td>$11K</td>
+                    <td>AMEX Seed Grant (IIT Madras IC)</td>
+                </tr>
+                <tr>
+                    <td>Active Deployments</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>+100%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <!-- Thesis -->
+        <h2>📐 Thesis</h2>
+
+        <div class="toggle">
+            <div class="toggle-header">
+                <span class="toggle-icon">▸</span>
+                <div>
+                    <div class="toggle-title">Evolution: Agriculture → Energy</div>
+                </div>
+            </div>
+            <div class="toggle-content">
+                Started solving climate risk for smallholder farmers. Same satellite-based intelligence now powers high-value decisions in energy infrastructure—pipeline integrity, renewable asset protection, critical infrastructure resilience.
+            </div>
+        </div>
+
+        <div class="toggle">
+            <div class="toggle-header">
+                <span class="toggle-icon">▸</span>
+                <div>
+                    <div class="toggle-title">Why Flood is Peril #1</div>
+                </div>
+            </div>
+            <div class="toggle-content">
+                $50B+ annual global losses. Most under-insured peril. Unlike wildfire or earthquake, flood risk changes rapidly with urbanization. Our CFD simulations + real-time satellite monitoring quantify this dynamic risk at asset level.
+            </div>
+        </div>
+
+        <div class="toggle">
+            <div class="toggle-header">
+                <span class="toggle-icon">▸</span>
+                <div>
+                    <div class="toggle-title">Risk-Resilience Framework</div>
+                </div>
+            </div>
+            <div class="toggle-content">
+                Climate Risk & Resilience Index translates physical hazards into financial metrics: Mean Damage Ratios, Climate VaR, Retrofit CapEx. TCFD-aligned, IFRS S2 compliant. Integrates into DCF models for climate-adjusted valuations.
+            </div>
+        </div>
+
+        <a href="https://asci-manifesto.web.app" target="_blank" class="link-block">
+            📄 Read our Manifesto →
+        </a>
+        <a href="https://substack.com/@asci" target="_blank" class="link-block">
+            📝 Technical Blog (4 posts) →
+        </a>
+
+        <hr>
+
+        <!-- Traction -->
+        <h2>🚀 Traction & Recognition</h2>
+
+        <div class="list-item">
+            <span class="list-icon">🏦</span>
+            <div class="list-content">
+                <div class="list-title">RBI Innovation Hub — Climate Risk Management <span class="tag tag-yellow">In Process</span></div>
+            </div>
+        </div>
+        <div class="list-item">
+            <span class="list-icon">🤖</span>
+            <div class="list-content">
+                <div class="list-title">Accel + Google AI Program <span class="tag tag-yellow">Shortlisted</span></div>
+            </div>
+        </div>
+        <div class="list-item">
+            <span class="list-icon">🌍</span>
+            <div class="list-content">
+                <div class="list-title">Climate Collective Accelerator — Cohort 2 <span class="tag tag-green">Active</span></div>
+            </div>
+        </div>
+        <div class="list-item">
+            <span class="list-icon">⛽</span>
+            <div class="list-content">
+                <div class="list-title">Shell GDC Ignite Program — Top 7 <span class="tag tag-green">Completed</span></div>
+            </div>
+        </div>
+        <div class="list-item">
+            <span class="list-icon">🎖️</span>
+            <div class="list-content">
+                <div class="list-title">IDEX — Top 12 Companies <span class="tag tag-green">Completed</span></div>
+            </div>
+        </div>
+        <div class="list-item">
+            <span class="list-icon">🎓</span>
+            <div class="list-content">
+                <div class="list-title">IIT Madras Incubation Cell <span class="tag tag-blue">₹15L Grant</span></div>
+            </div>
+        </div>
+        <div class="list-item">
+            <span class="list-icon">🚀</span>
+            <div class="list-content">
+                <div class="list-title">Antler Residency Program <span class="tag tag-blue">₹1L Grant</span></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Products -->
+        <h2>⚡ Products</h2>
+
+        <div class="product-grid">
+            <div class="product">
+                <div class="product-name">NeoSAR</div>
+                <div class="product-desc">Infrastructure Intelligence</div>
+                <ul class="product-features">
+                    <li>Underground surveillance</li>
+                    <li>Subsidence & deformation</li>
+                    <li>Ship detection</li>
+                    <li>Oil spill profiling</li>
+                    <li>Water body monitoring</li>
+                </ul>
+            </div>
+            <div class="product">
+                <div class="product-name">Climatica</div>
+                <div class="product-desc">Parametric Design Platform</div>
+                <ul class="product-features">
+                    <li>Weather indices (agriculture)</li>
+                    <li>Flood index (infrastructure)</li>
+                    <li>Custom trigger design</li>
+                    <li>Payout calculation</li>
+                </ul>
+            </div>
+            <div class="product">
+                <div class="product-name">FloodIQ</div>
+                <div class="product-desc">Urban Flood Intelligence</div>
+                <ul class="product-features">
+                    <li>Data harvesting tool</li>
+                    <li>Custom CFD engine</li>
+                    <li>Urban modeling (Chennai)</li>
+                    <li>Damage estimation</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Marketing -->
+        <h2>📣 Marketing & Sales</h2>
+
+        <div class="list-item">
+            <span class="list-icon">📰</span>
+            <div class="list-content">
+                <div class="list-title">Featured in MicroInsurance Innovation Hub's Pulse Newsletter</div>
+            </div>
+        </div>
+        <div class="list-item">
+            <span class="list-icon">🎤</span>
+            <div class="list-content">
+                <div class="list-title">Presented at RIL & PIL HQ</div>
+                <div class="list-desc">Pipeline integrity showcase to 200+ professionals</div>
+            </div>
+        </div>
+        <div class="list-item">
+            <span class="list-icon">🏭</span>
+            <div class="list-content">
+                <div class="list-title">IOCL PipeTech Conference</div>
+                <div class="list-desc">Presentation → Pilot assignment conversion</div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Team -->
+        <h2>👥 Team</h2>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-avatar">SS</div>
+                <div class="team-info">
+                    <div class="team-role">Ex-SatSure</div>
+                    <div class="team-detail">Strategic advisor</div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">GE</div>
+                <div class="team-info">
+                    <div class="team-role">Ex-GalaxEye</div>
+                    <div class="team-detail">Active collaboration</div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">🇮🇩</div>
+                <div class="team-info">
+                    <div class="team-role">Hydrologist</div>
+                    <div class="team-detail">Indonesia · Flood modeling</div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">🇬🇧</div>
+                <div class="team-info">
+                    <div class="team-role">Actuary</div>
+                    <div class="team-detail">Bayes School, London</div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">🇺🇸</div>
+                <div class="team-info">
+                    <div class="team-role">PhD Scholar</div>
+                    <div class="team-detail">NREL, USA · Hiring</div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Partnerships -->
+        <h2>🤝 Partnerships</h2>
+
+        <div class="partners">
+            <span class="partner">eKutir</span>
+            <span class="partner">Howden Reinsurance</span>
+            <span class="partner">ICICI Lombard</span>
+            <span class="partner">Tata Trusts</span>
+            <span class="partner">Plantix</span>
+            <span class="partner">Cyient</span>
+            <span class="partner">SatLabs</span>
+            <span class="partner">Planet Labs</span>
+            <span class="partner">NDMA</span>
+            <span class="partner">Kadel Insurance</span>
+        </div>
+
+        <hr>
+
+        <!-- Roadmap -->
+        <h2>🗺️ What's Next</h2>
+
+        <div class="two-col">
+            <div>
+                <h3>Applying to</h3>
+                <div class="list-item">
+                    <span class="list-icon">🇬🇧</span>
+                    <div class="list-content">
+                        <div class="list-title">Lloyd's Lab Accelerator</div>
+                        <div class="list-desc">Insurance innovation program</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <span class="list-icon">🇺🇸</span>
+                    <div class="list-content">
+                        <div class="list-title">Techstars NYC</div>
+                        <div class="list-desc">US market expansion</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Past milestones</h3>
+                <div class="list-item">
+                    <span class="list-icon">✓</span>
+                    <div class="list-content">
+                        <div class="list-title">Antler Residency</div>
+                        <div class="list-desc">₹1L grant</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <span class="list-icon">✓</span>
+                    <div class="list-content">
+                        <div class="list-title">IIT Madras IC</div>
+                        <div class="list-desc">₹15L grant</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <span class="list-icon">✓</span>
+                    <div class="list-content">
+                        <div class="list-title">IDEX Top 12</div>
+                        <div class="list-desc">National selection</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <p style="color: var(--text-light); font-size: 0.9rem; text-align: center; margin-top: 48px;">
+            ASCI · Applied Science Innovations · <a href="https://www.asci.co.in">asci.co.in</a>
+        </p>
+    </div>
+</body>
+</html>
